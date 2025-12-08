@@ -1,4 +1,4 @@
-.PHONY: run clean package
+.PHONY: run clean package run-package
 
 run:
 	@clj -M:run
@@ -8,3 +8,6 @@ clean:
 
 package:
 	@clj -T:build package
+
+run-package:
+	@java -jar target/application-*.jar

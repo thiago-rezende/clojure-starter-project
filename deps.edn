@@ -1,4 +1,4 @@
-{:paths ["source"]
+{:paths ["source" "resources"]
  :deps {org.clojure/clojure {:mvn/version "1.12.3"}}
 
  :aliases {:run {:main-opts ["-m" "core"]}
