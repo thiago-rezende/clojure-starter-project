@@ -1,6 +1,7 @@
 # calva
 .lsp/
 .calva/
+.clj-kondo/
 .nrepl-port
 
 # clojure
