@@ -1,7 +1,7 @@
 .PHONY: run clean package
 
 run:
-	@clj -M -m core
+	@clj -M:run
 
 clean:
 	@clj -T:build clean
