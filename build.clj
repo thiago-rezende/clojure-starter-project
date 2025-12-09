@@ -43,4 +43,4 @@
   (b/uber {:class-dir package_classes_directory
            :uber-file package_file
            :basis @basis
-           :main 'core}))
+           :main 'entrypoint}))
