@@ -37,6 +37,7 @@ jobs:
         uses: DeLaGuardo/setup-clojure@13.4
         with:
           cli: 1.12.3
+          github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Cache
         uses: actions/cache@v5
