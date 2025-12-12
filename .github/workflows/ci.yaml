@@ -50,7 +50,7 @@ jobs:
             ~/.m2/repository
           restore-keys: clojure-dependencies-
 
-      - name: Compile & Package Project
+      - name: Compile & Package
         run: clojure -T:build package
 
       - name: Upload Artifact
