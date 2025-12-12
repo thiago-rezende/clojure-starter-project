@@ -2,7 +2,7 @@
   (:require [clojure.tools.build.api :as build]))
 
 (def target-directory "target")
-(def sources-directory "source")
+(def source-directory "source")
 (def resources-directory "resources")
 
 (def package-name 'software.horus/application)
@@ -33,10 +33,10 @@
   (build/copy-dir {:src-dirs [resources-directory]
                    :target-dir package-classes-directory})
 
-  (println (format "|- [ compile ] compiling form '%s' to '%s'" sources-directory package-classes-directory))
+  (println (format "|- [ compile ] compiling form '%s' to '%s'" source-directory package-classes-directory))
 
   (build/compile-clj {:basis @basis
-                      :src-dirs [sources-directory]
+                      :src-dirs [source-directory]
                       :class-dir package-classes-directory})
 
   (println (format "|- [ uber ] creating '%s' package" package-file))
