@@ -27,7 +27,7 @@ This project is being developed to be the simplest and yet complete starter proj
 
 <!-- Badges -->
 
-[clojure-badge]: https://img.shields.io/badge/Clojure-1.12.3-63B132.svg?style=flat-square
+[clojure-badge]: https://img.shields.io/badge/Clojure-1.12.4-63B132.svg?style=flat-square
 [license-badge]: https://img.shields.io/badge/license-BSD_3_Clause-yellowgreen.svg?style=flat-square
 [ci-badge]: https://img.shields.io/github/actions/workflow/status/thiago-rezende/clojure-starter-project/build.yaml?branch=main&style=flat-square&label=build
 [tools-build-badge]: https://img.shields.io/badge/tools.build-0.10.11-63B132.svg?style=flat-square
