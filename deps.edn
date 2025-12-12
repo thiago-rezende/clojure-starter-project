@@ -1,5 +1,5 @@
-{:paths ["source" "resources"]
- :deps {org.clojure/clojure {:mvn/version "1.12.4"}}
+{:deps {org.clojure/clojure {:mvn/version "1.12.4"}}
+ :paths ["source" "resources"]
 
  :aliases {:run {:main-opts ["-m" "entrypoint"]}
            :build {:deps {io.github.clojure/tools.build {:mvn/version "0.10.11"}}
