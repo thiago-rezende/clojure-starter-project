@@ -58,4 +58,5 @@ jobs:
         with:
           path: target/application-*.jar
           name: application
+          retention-days: 5
           if-no-files-found: error
