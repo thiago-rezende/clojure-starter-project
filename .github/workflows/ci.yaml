@@ -1,4 +1,4 @@
-name: Linux
+name: CI Workflow
 
 on:
   push:
@@ -51,7 +51,7 @@ jobs:
           restore-keys: clojure-dependencies-
 
       - name: Compile & Package Project
-        run: clj -T:build package
+        run: clojure -T:build package
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v5
