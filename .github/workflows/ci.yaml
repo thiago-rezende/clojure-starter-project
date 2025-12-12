@@ -57,5 +57,5 @@ jobs:
         uses: actions/upload-artifact@v5
         with:
           path: target/application-*.jar
-          name: Application Uber Jar
+          name: application
           if-no-files-found: error
