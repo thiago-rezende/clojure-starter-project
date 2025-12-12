@@ -1,25 +1,27 @@
 (ns build
-  (:require [clojure.tools.build.api :as b]))
+  (:require [clojure.string :as string]
+            [clojure.tools.build.api :as build]))
 
-(def target_directory "target")
-(def sources_directory "source")
-(def resources_directory "resources")
+(def target-directory "target")
+(def sources-directory "source")
+(def resources-directory "resources")
 
-(def packade_name 'software.horus/application)
-(def package_version "0.0.0")
+(def package-name 'software.horus/application)
+(def package-version "0.0.0")
 
-(def package_classes_directory (format "%s/classes" target_directory))
+(def package-entrypoint 'entrypoint)
+(def package-classes-directory (format "%s/classes" target-directory))
 
-(def package_file (format "%s/%s-%s.jar" target_directory (name packade_name) package_version))
+(def package-file (format "%s/%s-%s.jar" target-directory (name package-name) package-version))
 
-(def basis (delay (b/create-basis {:project "deps.edn"})))
+(def basis (delay (build/create-basis {:project "deps.edn"})))
 
 (defn clean [_]
   (println "[ clean ] cleaning previous artifacts")
 
-  (println (format "|- [ delete ] removing '%s' directory" target_directory))
+  (println (format "|- [ delete ] removing '%s' directory" target-directory))
 
-  (b/delete {:path target_directory}))
+  (build/delete {:path target-directory}))
 
 #_{:clojure-lsp/ignore [:clojure-lsp/unused-public-var]}
 (defn package [_]
@@ -27,20 +29,20 @@
 
   (println "[ package ] packaging artifacts")
 
-  (println (format "|- [ copy ] copying '%s' to '%s'" resources_directory package_classes_directory))
+  (println (format "|- [ copy ] copying '%s' to '%s'" resources-directory package-classes-directory))
 
-  (b/copy-dir {:src-dirs [resources_directory]
-               :target-dir package_classes_directory})
+  (build/copy-dir {:src-dirs [resources-directory]
+                   :target-dir package-classes-directory})
 
-  (println (format "|- [ compile ] compiling form '%s' to '%s'" sources_directory package_classes_directory))
+  (println (format "|- [ compile ] compiling form '%s' to '%s'" sources-directory package-classes-directory))
 
-  (b/compile-clj {:basis @basis
-                  :src-dirs [sources_directory]
-                  :class-dir package_classes_directory})
+  (build/compile-clj {:basis @basis
+                      :src-dirs [sources-directory]
+                      :class-dir package-classes-directory})
 
-  (println (format "|- [ uber ] creating '%s' package" package_file))
+  (println (format "|- [ uber ] creating '%s' package" package-file))
 
-  (b/uber {:class-dir package_classes_directory
-           :uber-file package_file
-           :basis @basis
-           :main 'entrypoint}))
+  (build/uber {:class-dir package-classes-directory
+               :uber-file package-file
+               :basis @basis
+               :main package-entrypoint}))
