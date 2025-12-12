@@ -1,6 +1,7 @@
 (ns entrypoint
   (:gen-class)
-  (:require [clojure.java.io :as io]))
+  (:require [clojure.java.io :as io]
+            [clojure.string :as string]))
 
 (def version "0.0.0")
 
@@ -11,7 +12,13 @@
                        io/reader
                        slurp))
 
+(defn prefix-lines [prefix content]
+  (->> content
+       (string/split-lines)
+       (map #(str prefix %))
+       (string/join "\n")))
+
 #_{:clj-kondo/ignore [:unused-binding]}
 (defn -main [& args]
   (println (format "[ application ] v%s" version))
-  (println (format "[ resource ] <path:%s>\n%s" resource-path resource-content)))
+  (println (format "|- [ resource ] <path:%s>\n%s" resource-path (prefix-lines "|- |" resource-content))))
