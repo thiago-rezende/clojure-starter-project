@@ -6,11 +6,7 @@
 (def version "0.0.0")
 
 (def resource-path "config.json")
-(def resource-content (->
-                       "config.json"
-                       io/resource
-                       io/reader
-                       slurp))
+(def resource-content (slurp (io/resource resource-path)))
 
 (defn prefix-lines [prefix content]
   (->> content
