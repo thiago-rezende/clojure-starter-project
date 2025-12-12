@@ -1,6 +1,5 @@
 (ns build
-  (:require [clojure.string :as string]
-            [clojure.tools.build.api :as build]))
+  (:require [clojure.tools.build.api :as build]))
 
 (def target-directory "target")
 (def sources-directory "source")
@@ -42,7 +41,7 @@
 
   (println (format "|- [ uber ] creating '%s' package" package-file))
 
-  (build/uber {:class-dir package-classes-directory
-               :uber-file package-file
+  (build/uber {:main package-entrypoint
                :basis @basis
-               :main package-entrypoint}))
+               :uber-file package-file
+               :class-dir package-classes-directory}))
