@@ -11,11 +11,11 @@
 
 <!-- Short Description -->
 
-> A simple clojure starter project.
+> A simple [Clojure][clojure-url] starter project.
 
 <!-- Description -->
 
-This project is being developed to be the simplest and yet complete starter projects using the [Clojure][clojure-url] programming language, [deps.edn][deps-edn-url] definition and [tools.build][tools-build-url] build system.
+This project is being developed to be the simplest, yet complete starter project using the [Clojure][clojure-url] programming language, [deps.edn][deps-edn-url] definition, and [tools.build][tools-build-url] build system.
 
 <!-- Links -->
 
