@@ -1,7 +1,7 @@
 (ns entrypoint
   (:gen-class)
-  (:require [clojure.java.io :as io]
-            [clojure.string :as string]))
+  (:require [clojure.string :as string]
+            [clojure.java.io :as io]))
 
 (def version "0.0.0")
 
