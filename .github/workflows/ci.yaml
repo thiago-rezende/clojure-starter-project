@@ -1,0 +1,60 @@
+name: Linux
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      # files to watch
+      - "deps.edn"
+      - "build.clj"
+      # directories to watch
+      - "source/**"
+
+  pull_request:
+    branches: ["main"]
+    paths:
+      # files to watch
+      - "deps.edn"
+      - "build.clj"
+      # directories to watch
+      - "source/**"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Setup Repository
+        uses: actions/checkout@v6
+
+      - name: Setup Java
+        uses: actions/setup-java@v5
+        with:
+          distribution: "oracle"
+          java-version: "21"
+
+      - name: Setup Clojure
+        uses: DeLaGuardo/setup-clojure@13.4
+        with:
+          cli: 1.12.3
+
+      - name: Setup Cache
+        uses: actions/cache@v5
+        with:
+          key: clojure-dependencies-${{ hashFiles('deps.edn') }}
+          path: |
+            .cpcache
+            ~/.gitlibs
+            ~/.deps.clj
+            ~/.m2/repository
+          restore-keys: clojure-dependencies-
+
+      - name: Compile & Package Project
+        run: clj -T:build package
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v5
+        with:
+          path: target/application-*.jar
+          name: Application Uber Jar
+          if-no-files-found: error
