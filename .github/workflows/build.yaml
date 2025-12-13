@@ -39,6 +39,8 @@ jobs:
         uses: DeLaGuardo/setup-clojure@13.4
         with:
           cli: 1.12.4.1582
+          cljfmt: 0.15.6
+          clj-kondo: 2025.10.23
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Cache
@@ -62,3 +64,77 @@ jobs:
           name: application
           retention-days: 5
           if-no-files-found: error
+
+  check:
+    needs: build
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Setup Repository
+        uses: actions/checkout@v6
+
+      - name: Setup Java
+        uses: actions/setup-java@v5
+        with:
+          distribution: "oracle"
+          java-version: "21"
+
+      - name: Setup Clojure
+        uses: DeLaGuardo/setup-clojure@13.4
+        with:
+          cli: 1.12.4.1582
+          cljfmt: 0.15.6
+          clj-kondo: 2025.10.23
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Cache
+        uses: actions/cache@v5
+        with:
+          key: clojure-dependencies-${{ hashFiles('deps.edn') }}
+          path: |
+            .cpcache
+            ~/.gitlibs
+            ~/.deps.clj
+            ~/.m2/repository
+          restore-keys: clojure-dependencies-
+
+      - name: Run clj-kondo
+        run: clj-kondo --lint source
+
+  style:
+    needs: check
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Setup Repository
+        uses: actions/checkout@v6
+
+      - name: Setup Java
+        uses: actions/setup-java@v5
+        with:
+          distribution: "oracle"
+          java-version: "21"
+
+      - name: Setup Clojure
+        uses: DeLaGuardo/setup-clojure@13.4
+        with:
+          cli: 1.12.4.1582
+          cljfmt: 0.15.6
+          clj-kondo: 2025.10.23
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Cache
+        uses: actions/cache@v5
+        with:
+          key: clojure-dependencies-${{ hashFiles('deps.edn') }}
+          path: |
+            .cpcache
+            ~/.gitlibs
+            ~/.deps.clj
+            ~/.m2/repository
+          restore-keys: clojure-dependencies-
+
+      - name: Run cljfmt
+        run: cljfmt check source
