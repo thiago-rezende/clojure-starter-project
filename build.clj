@@ -5,7 +5,7 @@
 (def source-directory "source")
 (def resources-directory "resources")
 
-(def package-name 'software.horus/application)
+(def package-name 'application)
 (def package-version "0.0.0")
 
 (def package-entrypoint 'entrypoint)
