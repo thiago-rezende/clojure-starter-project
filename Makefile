@@ -1,12 +1,12 @@
-.PHONY: run check style clean package run-package
+.PHONY: run lint format clean package run-package
 
 run:
 	@clj -M:run
 
-check:
+lint:
 	@clj-kondo --lint source
 
-style:
+format:
 	@cljfmt check source
 
 clean:
