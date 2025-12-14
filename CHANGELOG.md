@@ -4,6 +4,19 @@
 
 ## [Unreleased]
 
+ - [41f6c60] chore(build): remove unnecessary organization name on package-name variable (Thiago Rezende)
+ - [60494a7] ci: update check and style steps names to lint and format for clarity (Thiago Rezende)
+ - [70a96d8] ci: add check and style steps for automated linting and formating (Thiago Rezende)
+ - [a4b2f02] docs(readme): update description style for clarity (Thiago Rezende)
+ - [c435e15] style(build): update soruce directory variable name for clarity (Thiago Rezende)
+ - [3cc6b73] refactor(entrypoint): remove unnecessary io/reader call on resource-content retrieval (Thiago Rezende)
+ - [26ac3eb] style(build): update mapping ordering by key length on deps.edn (Thiago Rezende)
+ - [551ede5] docs(readme): update clojure version badge to 1.12.4 (Thiago Rezende)
+ - [b80a228] ci: update watched files to contain the workflow itself (Thiago Rezende)
+ - [e721cb8] ci(artifact): update default retention to 5 days (Thiago Rezende)
+ - [ab179c6] style(entrypoint): update 'requires' ordering to be ascending on module name length (Thiago Rezende)
+ - [acc16fa] feat(entrypoint): add prefix-lines function to improve logging (Thiago Rezende)
+ - [d71edd9] docs(changelog): update CHANGELOG.md file (Thiago Rezende)
  - [8d68dd2] chore: add build status badge on README.md and update workflow name (Thiago Rezende)
  - [f8a2bb5] ci: update artifact name to 'application' (Thiago Rezende)
  - [26aeaf4] ci: update packaging step name to 'Compile & Package' (Thiago Rezende)
