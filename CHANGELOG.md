@@ -4,6 +4,10 @@
 
 ## [Unreleased]
 
+
+## [0.1.0]
+ - [52e05ac] release: version 0.1.0 (Thiago Rezende)
+ - [64266c7] docs(changelog): update CHANGELOG.md file (Thiago Rezende)
  - [41f6c60] chore(build): remove unnecessary organization name on package-name variable (Thiago Rezende)
  - [60494a7] ci: update check and style steps names to lint and format for clarity (Thiago Rezende)
  - [70a96d8] ci: add check and style steps for automated linting and formating (Thiago Rezende)
@@ -35,3 +39,4 @@
  - [fb8186f] chore(build): add :run alias and update tools.build version (Thiago Rezende)
  - [2d19720] chore: add initital README.md (Thiago Rezende)
  - [1af1443] chore: initial commit (Thiago Rezende)
+
