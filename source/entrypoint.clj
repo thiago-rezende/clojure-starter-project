@@ -1,11 +1,11 @@
 (ns entrypoint
   (:gen-class)
-  (:require [clojure.string :as string]
-            [clojure.java.io :as io]))
+  (:require [clojure.java.io :as io]
+            [clojure.string :as string]))
 
 (def version "0.1.0")
 
-(def resource-path "config.json")
+(def resource-path "config.edn")
 (def resource-content (slurp (io/resource resource-path)))
 
 (defn prefix-lines [prefix content]

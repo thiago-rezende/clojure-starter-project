@@ -1,4 +1,7 @@
 {
+  /* file settings */
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 0,
   /* editor settings */
   "editor.formatOnSave": true,
   /* clojure settings */
