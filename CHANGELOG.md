@@ -5,6 +5,11 @@
 ## [Unreleased]
 
 
+## [0.2.0]
+ - [a2a59d3] release: version 0.2.0 (Thiago Rezende)
+ - [a8608b4] chore(repl): add nREPL as default REPL solution for the project (Thiago Rezende)
+ - [3569485] release: version 0.1.0 (Thiago Rezende)
+
 ## [0.1.0]
  - [52e05ac] release: version 0.1.0 (Thiago Rezende)
  - [64266c7] docs(changelog): update CHANGELOG.md file (Thiago Rezende)
