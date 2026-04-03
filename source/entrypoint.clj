@@ -3,7 +3,7 @@
   (:require [clojure.java.io :as io]
             [clojure.string :as string]))
 
-(def version "0.2.0")
+(def version "0.2.1")
 
 (def resource-path "config.edn")
 (def resource-content (slurp (io/resource resource-path)))

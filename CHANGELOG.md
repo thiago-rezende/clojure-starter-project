@@ -5,6 +5,11 @@
 ## [Unreleased]
 
 
+## [0.2.1]
+ - [4ac7818] release: version 0.2.1 (Thiago Rezende)
+ - [e7e69e9] ci: update upload-artifact and setup-clojure actions to latest versions (Thiago Rezende)
+ - [9b599b8] release: version 0.2.0 (Thiago Rezende)
+
 ## [0.2.0]
  - [a2a59d3] release: version 0.2.0 (Thiago Rezende)
  - [a8608b4] chore(repl): add nREPL as default REPL solution for the project (Thiago Rezende)
