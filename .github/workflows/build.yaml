@@ -36,7 +36,7 @@ jobs:
           java-version: "21"
 
       - name: Setup Clojure
-        uses: DeLaGuardo/setup-clojure@13.4
+        uses: DeLaGuardo/setup-clojure@13.6.0
         with:
           cli: 1.12.4.1582
           cljfmt: 0.15.6
@@ -58,7 +58,7 @@ jobs:
         run: clojure -T:build package
 
       - name: Upload Artifact
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v7
         with:
           path: target/application-*.jar
           name: application
@@ -81,7 +81,7 @@ jobs:
           java-version: "21"
 
       - name: Setup Clojure
-        uses: DeLaGuardo/setup-clojure@13.4
+        uses: DeLaGuardo/setup-clojure@13.6.0
         with:
           cli: 1.12.4.1582
           cljfmt: 0.15.6
@@ -118,7 +118,7 @@ jobs:
           java-version: "21"
 
       - name: Setup Clojure
-        uses: DeLaGuardo/setup-clojure@13.4
+        uses: DeLaGuardo/setup-clojure@13.6.0
         with:
           cli: 1.12.4.1582
           cljfmt: 0.15.6
