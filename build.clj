@@ -6,7 +6,7 @@
 (def resources-directory "resources")
 
 (def package-name 'application)
-(def package-version "0.2.1")
+(def package-version "1.0.0")
 
 (def package-entrypoint 'entrypoint)
 (def package-classes-directory (format "%s/classes" target-directory))

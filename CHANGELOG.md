@@ -5,6 +5,11 @@
 ## [Unreleased]
 
 
+## [1.0.0]
+ - [8d3b34e] release: version 1.0.0 (Thiago Rezende)
+ - [b623cc9] feat(repl): add cider-nrepl middleware to nREPL alias for better editor and debugger integration (Thiago Rezende)
+ - [ab44d47] release: version 0.2.1 (Thiago Rezende)
+
 ## [0.2.1]
  - [4ac7818] release: version 0.2.1 (Thiago Rezende)
  - [e7e69e9] ci: update upload-artifact and setup-clojure actions to latest versions (Thiago Rezende)
